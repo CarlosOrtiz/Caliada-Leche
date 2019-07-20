@@ -95,7 +95,7 @@
             </div>
         </div>
     </div>
-    <asp:Label runat="server" ID="mostrar" CssClass="label-info alert" ></asp:Label>
+
     <div class="row">
         <div class="col-md-12">
             <div class="box box-warning collapsed-box direct-chat direct-chat-warning">

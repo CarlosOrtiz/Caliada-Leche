@@ -16,7 +16,7 @@ namespace Proyecto_Web.Controladores
             Mol_Composicion = new COMPOSICION();
         }
 
-        public DataTable Guardar_Prueba_Adulteracion(COMPOSICION obj)
+        public DataTable Guardar_Prueba_Composicion(COMPOSICION obj)
         {
             return obj.Registrar_Prueba_Composicion(obj);
         }

@@ -5,13 +5,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Proyecto_Web.Patrones.Adapter;
+using Proyecto_Web.Patrones.FactoryMethod;
+using Proyecto_Web.Controladores;
 
 namespace Proyecto_Web.Vistas.Private.Pruebas
 {
     public partial class Adulteracion : System.Web.UI.Page
     {
-        private PRUEBA_MEDICAMENTO mol_medicamento = new PRUEBA_MEDICAMENTO();
+        private ADULTERACION Mol_Adulteracion = new ADULTERACION();
+        private ADULTERACIONCONTROLADOR Con_Adul = new ADULTERACIONCONTROLADOR();
         DataTable DT;
 
         public string modal_mensaje;
@@ -60,9 +62,18 @@ namespace Proyecto_Web.Vistas.Private.Pruebas
         {
             if (ValidarDatos())
             {
-                mol_medicamento.FK_PERSONA2 = Convert.ToString(Request.QueryString["Valor"]);
-                mol_medicamento.Registrar_Prueba_Antibiotico(TB_Nombre.Text, TB_Cantidad.Text, TB_Valor.Text, TB_Observacion.Text, mol_medicamento.FK_PERSONA2);
-                Response.Redirect("~/Vistas/Private/Supervisor/SeleccionarPrueba.aspx?Valor=" + mol_medicamento.FK_PERSONA2);
+                Mol_Adulteracion.FK_PERSONA = Convert.ToString(ID_PERSONA);
+                Mol_Adulteracion.FECHA = Fecha_Prueba.Text;
+                Mol_Adulteracion.CANTIDAD = TB_Cantidad.Text;
+                Mol_Adulteracion.OBSERVACION = TB_Observacion.Text;
+                Mol_Adulteracion.AGUA = TB_Agua.Text;
+                Mol_Adulteracion.CLORUROS = TB_Cloruros.Text;
+                Mol_Adulteracion.SACAROSA = TB_Sacarosa.Text;
+
+                Con_Adul.Guardar_Prueba_Adulteracion(Mol_Adulteracion);
+
+              //  Mol_Adulteracion.Registrar_Prueba_Antibiotico(TB_Nombre.Text, TB_Cantidad.Text, TB_Valor.Text, TB_Observacion.Text, Mol_Adulteracion.FK_PERSONA2);
+                Response.Redirect("~/Vistas/Private/Pruebas/Adulteracion.aspx?Valor=" + ID_PERSONA);
                 Ocultar = "collapsed-box";
 
             }
@@ -72,12 +83,14 @@ namespace Proyecto_Web.Vistas.Private.Pruebas
         {
             bool good = false;
 
-            if (TB_Nombre.Text.Length == 0 || TB_Nombre.Text.Length < 3)
-                mostrarModal("Campo vacio o ha pasado el maximo de caracteres en le campo de nombre del medicamento!", "Error", "modal-danger");
-            else if (TB_Cantidad.Text.Length == 0)
+            if (TB_Cantidad.Text.Length == 0)
                 mostrarModal("Campo vacio o ha pasado el maximo de caracteres en le campo de cantidad!", "Error", "modal-danger");
-            else if (TB_Valor.Text.Length == 0)
-                mostrarModal("Campo vacio o ha pasado el maximo de caracteres para el campo de valor!", "Error", "modal-danger");
+            else if (TB_Agua.Text.Length == 0 && TB_Agua.Text.Length < 10)
+                mostrarModal("Campo vacio o ha pasado el maximo de caracteres permitidos por el campo de TB_Agua!", "Error", "modal-danger");
+            else if (TB_Cloruros.Text.Length == 0 && TB_Cloruros.Text.Length < 10)
+                mostrarModal("Campo vacio o ha pasado el maximo de caracteres permitidos por el campo de TB_Cloruros!", "Error", "modal-danger");
+            else if (TB_Sacarosa.Text.Length == 0 && TB_Sacarosa.Text.Length < 10)
+                mostrarModal("Campo vacio o ha pasado el maximo de caracteres permitidos por el campo de TB_Sacarosa!", "Error", "modal-danger");
             else
                 good = true;
 

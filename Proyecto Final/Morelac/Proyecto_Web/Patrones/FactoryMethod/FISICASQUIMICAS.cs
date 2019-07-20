@@ -13,7 +13,7 @@ namespace Proyecto_Web.Patrones.FactoryMethod
     {
         private IDatos dat = new Datos();
         public float Cant { set; get; }
-        public string ID_PRUEBA { set; get; }
+        public string FK_PERSONA { set; get; }
         public string CANTIDAD { set; get; }
         public string FECHA { set; get; }
         public string OBSERVACION { set; get; }
@@ -30,7 +30,7 @@ namespace Proyecto_Web.Patrones.FactoryMethod
         {
             try
             {
-                return dat.OperarProcedimiento("CALL INSE_PRUEBA ('" + obj.ID_PRUEBA + "', '" + obj.FECHA + "', '" + obj.OBSERVACION + "', '" + obj.CANTIDAD + "', '" + obj.PH + "', '" + obj.ACIDO  + "');");
+                return dat.OperarProcedimiento("CALL INSE_FISICAS_QUIMICAS2 ('" + obj.FK_PERSONA + "', '" + obj.FECHA + "', '" + obj.OBSERVACION + "', '" + obj.CANTIDAD + "', '" + obj.PH + "', '" + obj.ACIDO  + "');");
             }
             catch (Exception io)
             {

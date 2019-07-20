@@ -29,34 +29,13 @@
                     </div>
                 </div>
                 <div class="box-body" style="padding-left: 7%; padding-right: 7%; padding-bottom: 3%; padding-top: 3%;">
-                    <fieldset>
+                     
+
+                        <fieldset>
                         <div class="container">
                             <div class="row">
                                 <div class="form-horizontal col-lg-12">
-
                                     <div class="form-group col-lg-6">
-                                        <div class="box-body">
-                                            <label class="col-sm-3 control-label"><b style="font-size: 17px;">PH</b></label>
-                                            <div style="padding-left: 0%; padding-right: 0%;" class="input-group col-sm-3">
-                                                <asp:TextBox runat="server" ID="TextBox2" MaxLength="10" onKeyPress="return soloNumeros(event)" onkeyDown="checkTextAreaMaxLength(this,event,'10');" CssClass="form-control style-form" TextMode="Number" placeholder="6.5 A 6.7" required></asp:TextBox>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="form-group col-lg-6">
-
-                                        <div class="box-body">
-                                            <label class="col-sm-3 control-label"><b style="font-size: 17px;">PH</b></label>
-                                            <div style="padding-left: 0%; padding-right: 0%;" class="input-group col-sm-3">
-                                                <asp:TextBox runat="server" ID="TB_PH" MaxLength="10" onKeyPress="return soloNumeros(event)" onkeyDown="checkTextAreaMaxLength(this,event,'10');" CssClass="form-control style-form" TextMode="Number" placeholder="6.5 A 6.7" required></asp:TextBox>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group col-lg-6">
-
                                         <div class="box-body">
                                             <label class="col-sm-3 control-label text-center"><b style="font-size: 17px;">Muestra De Leche: </b></label>
                                             <div style="padding-left: 0%; padding-right: 0%;" class="input-group col-sm-3">
@@ -65,7 +44,14 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <div class="form-group col-lg-6">
+                                        <div class="box-body">
+                                            <label class="col-sm-3 control-label"><b style="font-size: 17px;">PH</b></label>
+                                            <div style="padding-left: 0%; padding-right: 0%;" class="input-group col-sm-3">
+                                                <asp:TextBox runat="server" ID="TB_PH" MaxLength="10" onKeyPress="return soloNumeros(event)" onkeyDown="checkTextAreaMaxLength(this,event,'10');" CssClass="form-control style-form" TextMode="Number" placeholder="6.5 A 6.7" required></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="form-group col-lg-6">
                                         <div class="box-body">
                                             <label class="col-sm-3 control-label"><b style="font-size: 17px;">Acido Lactico</b></label>
@@ -111,7 +97,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <asp:LinkButton Style="margin: 0% 0% 0% 0%;" runat="server" ID="Btn_Save_Prueba" CssClass="btn btn-success" ><i class="fa fa-save"></i> Guardar Prueba</asp:LinkButton>
+                        <asp:LinkButton Style="margin: 0% 0% 0% 0%;" runat="server" ID="Btn_Save_Prueba" CssClass="btn btn-success"  OnClick="Btn_Save_Prueba_Click"><i class="fa fa-save"></i> Guardar Prueba</asp:LinkButton>
                         <asp:LinkButton Style="margin: 0% 0% 0% 0%;" runat="server" ID="Btn_Cerrar" CssClass="btn btn-danger" ><i class="fa fa-remove"></i> Cancelar</asp:LinkButton>
                     </div>
                 </div>

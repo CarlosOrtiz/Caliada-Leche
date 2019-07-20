@@ -15,24 +15,17 @@
 
         <br />
 
-    <div class="row">
+     <div class="row">
         <div class="col-md-12">
-            <div   class="box box-warning <%=Ocultar %>   direct-chat direct-chat-warning">
-                <div class="box-header with-border text-center">
-                    <h3 class="box-title"><b >INFORMACIÓN</b></h3>
+            <div class="box box-warning  direct-chat direct-chat-warning">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><b>CARACTERISTICAS COMPOSICIÓN</b></h3>
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-plus"></i>
-                        </button>
-                    </div>
+                   
                 </div>
                 <div class="box-body" style="">
                     <fieldset>
-                        <div class="form-horizontal col-xs-12">
-                            <br />
-                            <div class="form-group col-xs-6">
-                                <br />
+                        <div class="form-group col-lg-6">
                                 <div class="box-body">
                                     <label class="col-sm-5 control-label text-center"><b style="font-size: 17px;">Muestra De Leche: </b></label>
                                     <div style="padding-left: 0%; padding-right: 0%;" class="input-group col-sm-4">
@@ -41,29 +34,62 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group col-xs-6">
+                        <div class="form-horizontal col-lg-6">
+                            <div class="form-group">
                                 <div class="box-body">
-                                    <label class="col-sm-3 control-label"><b style="font-size: 17px;">Nombre: </b></label>
-                                    <div style="padding-left: 0%; padding-right: 0%;" class="input-group">
-                                        <asp:TextBox runat="server" ID="TB_Nombre" MaxLength="100" onkeyDown="checkTextAreaMaxLength(this,event,'100');" CssClass="form-control style-form"  placeholder="Antibiotico B1" required></asp:TextBox>
-                                    </div>
-                                </div>
-                                <br />
-                                <div class="box-body ">
-                                    <label class="col-sm-3 control-label"><b style="font-size: 17px;">Valor: </b></label>
+                                    <label class="col-sm-3 control-label"><b style="font-size: 17px;">Grasa</b></label>
                                     <div style="padding-left: 0%; padding-right: 0%;" class="input-group col-sm-3">
-                                        <asp:TextBox runat="server" ID="TB_Valor" MaxLength="10" onKeyPress="return soloNumeros(event)" onkeyDown="checkTextAreaMaxLength(this,event,'10');" CssClass="form-control style-form" TextMode="Number" placeholder="15" required></asp:TextBox>
-                                        <span class="input-group-addon">mL</span>
+                                        <asp:TextBox runat="server" ID="TB_Grasa" MaxLength="10" onKeyPress="return soloNumeros(event)" onkeyDown="checkTextAreaMaxLength(this,event,'10');" CssClass="form-control style-form" TextMode="Number" placeholder="15" required></asp:TextBox>
+                                        <span class="input-group-addon">gr</span>
                                     </div>
                                 </div>
-                                <br />
                             </div>
+                           <div class="form-group">
+                                <div class="box-body">
+                                    <label class="col-sm-3 control-label"><b style="font-size: 17px;">Vitaminas</b></label>
+                                    <div style="padding-left: 0%; padding-right: 0%;" class="input-group col-sm-3">
+                                        <asp:DropDownList ID="Drop_Vitaminas" Style="width: 100%;" CssClass="form-control select2 select2-hidden-accessible style-form solo-letras" TabIndex="-1" aria-hidden="true" AppendDataBoundItems="true" runat="server" BackColor="White" required>
+                                            <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                            <asp:ListItem Value="1">Vit. A</asp:ListItem>
+                                            <asp:ListItem Value="2">Vit. D</asp:ListItem>
+                                            <asp:ListItem Value="3">Vit. E</asp:ListItem>
+                                            <asp:ListItem Value="4">Vit. K</asp:ListItem>
+                                            <asp:ListItem Value="5">Vit. B1</asp:ListItem>
+                                            <asp:ListItem Value="6">Vit. B2</asp:ListItem>
+                                            <asp:ListItem Value="7">Vit. B6</asp:ListItem>
+                                            <asp:ListItem Value="8">Vit. B12</asp:ListItem>
+                                            <asp:ListItem Value="9">Vit. C</asp:ListItem>
+                                            <asp:ListItem Value="10">Todas Vit. A,D,E,K,B1,B2,B6,B12,C)</asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+                       <div class="form-group">
+                                <div class="box-body">
+                                    <label class="col-sm-3 control-label"><b style="font-size: 17px;">Minerales</b></label>
+                                    <div style="padding-left: 0%; padding-right: 0%;" class="input-group col-sm-3">
+                                        <asp:DropDownList ID="Drop_Mineerales" Style="width: 100%;" CssClass="form-control select2 select2-hidden-accessible style-form solo-letras" TabIndex="-1" aria-hidden="true" AppendDataBoundItems="true" runat="server" BackColor="White" required>
+                                            <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                            <asp:ListItem Value="1">Potasio</asp:ListItem>
+                                            <asp:ListItem Value="2">Calcio</asp:ListItem>
+                                            <asp:ListItem Value="3">Cloro</asp:ListItem>
+                                            <asp:ListItem Value="4">Fósfor</asp:ListItem>
+                                            <asp:ListItem Value="5">Fósfor</asp:ListItem>
+                                            <asp:ListItem Value="6">Azufre</asp:ListItem>
+                                            <asp:ListItem Value="7">Magnesio</asp:ListItem>
+                                            <asp:ListItem Value="8">Todos</asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                            </div>
                     </fieldset>
                 </div>
             </div>
         </div>
     </div>
+
 
     <div class="row">
         <div class="col-md-3"></div>

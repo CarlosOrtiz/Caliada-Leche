@@ -14,7 +14,7 @@ namespace Proyecto_Web.Patrones.FactoryMethod
     {
         private IDatos dat = new Datos();
 
-        public string ID_PRUEBA { set; get; }
+        public string FK_PERSONA { set; get; }
         public string FECHA { set; get; }
         public string OBSERVACION { set; get; }
         public string CANTIDAD { set; get; }
@@ -34,7 +34,7 @@ namespace Proyecto_Web.Patrones.FactoryMethod
         {
             try
             {
-                return dat.OperarProcedimiento("CALL INSE_PRUEBA ('" + obj.ID_PRUEBA + "', '" + obj.FECHA + "', '" + obj.OBSERVACION + "', '" + obj.CANTIDAD + "', '" + obj.AGUA + "', '" + obj.CLORUROS + "', '" + obj.SACAROSA + "');");
+                return dat.OperarProcedimiento("CALL INSE_ADULTERACION2 ('" + obj.FK_PERSONA + "', '" + obj.FECHA + "', '" + obj.OBSERVACION + "', '" + obj.CANTIDAD + "', '" + obj.AGUA + "', '" + obj.CLORUROS + "', '" + obj.SACAROSA + "');");
             }
             catch (Exception io)
             {

@@ -22,22 +22,31 @@ namespace Proyecto_Web.Vistas.Private.Pruebas {
         protected global::System.Web.UI.WebControls.TextBox TB_Cantidad;
         
         /// <summary>
-        /// Control TB_Nombre.
+        /// Control TB_Grasa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TB_Nombre;
+        protected global::System.Web.UI.WebControls.TextBox TB_Grasa;
         
         /// <summary>
-        /// Control TB_Valor.
+        /// Control Drop_Vitaminas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TB_Valor;
+        protected global::System.Web.UI.WebControls.DropDownList Drop_Vitaminas;
+        
+        /// <summary>
+        /// Control Drop_Mineerales.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Drop_Mineerales;
         
         /// <summary>
         /// Control Fecha_Prueba.

@@ -5,14 +5,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Proyecto_Web.Patrones.Adapter;
+using Proyecto_Web.Patrones.FactoryMethod;
+using Proyecto_Web.Controladores;
 
 namespace Proyecto_Web.Vistas.Private.Pruebas
 {
     public partial class Composicion : System.Web.UI.Page
     {
-        private PRUEBA_MEDICAMENTO mol_medicamento = new PRUEBA_MEDICAMENTO();
-        DataTable DT;
+        private COMPOSICION Mod_Composicion = new COMPOSICION();
+        private COMPOSICIONCONTROLADOR Con_Composicion = new COMPOSICIONCONTROLADOR();
+        DataTable DT= new DataTable();
 
         public string modal_mensaje;
         public string modal_titulo;
@@ -36,7 +38,7 @@ namespace Proyecto_Web.Vistas.Private.Pruebas
             {
                 Fecha_Prueba.ReadOnly = true;
                 Fecha_Prueba.Enabled = false;
-                Fecha_Prueba.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                Fecha_Prueba.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script1", "reset();", true);
             }
 
@@ -60,9 +62,19 @@ namespace Proyecto_Web.Vistas.Private.Pruebas
         {
             if (ValidarDatos())
             {
-                mol_medicamento.FK_PERSONA2 = Convert.ToString(Request.QueryString["Valor"]);
-                mol_medicamento.Registrar_Prueba_Antibiotico(TB_Nombre.Text, TB_Cantidad.Text, TB_Valor.Text, TB_Observacion.Text, mol_medicamento.FK_PERSONA2);
-                Response.Redirect("~/Vistas/Private/Supervisor/SeleccionarPrueba.aspx?Valor=" + mol_medicamento.FK_PERSONA2);
+                Mod_Composicion.FK_PERSONA = Convert.ToString(ID_PERSONA);
+                Mod_Composicion.FECHA = Fecha_Prueba.Text;
+                Mod_Composicion.OBSERVACION = TB_Observacion.Text;
+                Mod_Composicion.CANTIDAD = TB_Cantidad.Text;
+                Mod_Composicion.GRASA = TB_Grasa.Text;
+                Mod_Composicion.VITAMINAS = Convert.ToString(Drop_Vitaminas.SelectedItem);
+                Mod_Composicion.MINERALES = Convert.ToString(Drop_Mineerales.SelectedItem);
+
+
+                Con_Composicion.Guardar_Prueba_Composicion(Mod_Composicion);
+            //    mol_medicamento.FK_PERSONA2 = Convert.ToString(Request.QueryString["Valor"]);
+              //  mol_medicamento.Registrar_Prueba_Antibiotico(TB_Nombre.Text, TB_Cantidad.Text, TB_Valor.Text, TB_Observacion.Text, mol_medicamento.FK_PERSONA2);
+                Response.Redirect("~/Vistas/Private/Pruebas/Composicion.aspx?Valor=" + ID_PERSONA);
                 Ocultar = "collapsed-box";
 
             }
@@ -72,12 +84,12 @@ namespace Proyecto_Web.Vistas.Private.Pruebas
         {
             bool good = false;
 
-            if (TB_Nombre.Text.Length == 0 || TB_Nombre.Text.Length < 3)
-                mostrarModal("Campo vacio o ha pasado el maximo de caracteres en le campo de nombre del medicamento!", "Error", "modal-danger");
-            else if (TB_Cantidad.Text.Length == 0)
+            if (TB_Cantidad.Text.Length == 0)
                 mostrarModal("Campo vacio o ha pasado el maximo de caracteres en le campo de cantidad!", "Error", "modal-danger");
-            else if (TB_Valor.Text.Length == 0)
-                mostrarModal("Campo vacio o ha pasado el maximo de caracteres para el campo de valor!", "Error", "modal-danger");
+            else if (TB_Grasa.Text.Length == 0 && TB_Grasa.Text.Length > 3 && TB_Grasa.Text.Length < 4)
+                mostrarModal("Campo vacio o ha pasado el maximo de caracteres en le campo de grasa!", "Error", "modal-danger");
+            else if (Drop_Vitaminas.SelectedValue.Equals(0))
+                mostrarModal("Campo vacio o ha pasado el maximo de caracteres en le campo de viranimas!", "Error", "modal-danger");
             else
                 good = true;
 
