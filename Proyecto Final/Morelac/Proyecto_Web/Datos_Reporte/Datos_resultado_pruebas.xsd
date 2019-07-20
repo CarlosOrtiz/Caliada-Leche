@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Datos_resultado_pruebas" targetNamespace="http://tempuri.org/Datos_resultado_pruebas.xsd" xmlns:mstns="http://tempuri.org/Datos_resultado_pruebas.xsd" xmlns="http://tempuri.org/Datos_resultado_pruebas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Datos_resultado_pruebas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Datos_resultado_pruebas" msprop:Generator_UserDSName="Datos_resultado_pruebas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Ressultados" msprop:Generator_TableClassName="RessultadosDataTable" msprop:Generator_TableVarName="tableRessultados" msprop:Generator_TablePropName="Ressultados" msprop:Generator_RowDeletingName="RessultadosRowDeleting" msprop:Generator_RowChangingName="RessultadosRowChanging" msprop:Generator_RowEvHandlerName="RessultadosRowChangeEventHandler" msprop:Generator_RowDeletedName="RessultadosRowDeleted" msprop:Generator_UserTableName="Ressultados" msprop:Generator_RowChangedName="RessultadosRowChanged" msprop:Generator_RowEvArgName="RessultadosRowChangeEvent" msprop:Generator_RowClassName="RessultadosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHA_PRUEBA" msprop:Generator_ColumnVarNameInTable="columnFECHA_PRUEBA" msprop:Generator_ColumnPropNameInRow="FECHA_PRUEBA" msprop:Generator_ColumnPropNameInTable="FECHA_PRUEBAColumn" msprop:Generator_UserColumnName="FECHA_PRUEBA" type="xs:string" minOccurs="0" />
+              <xs:element name="OBSERVACION" msprop:Generator_ColumnVarNameInTable="columnOBSERVACION" msprop:Generator_ColumnPropNameInRow="OBSERVACION" msprop:Generator_ColumnPropNameInTable="OBSERVACIONColumn" msprop:Generator_UserColumnName="OBSERVACION" type="xs:string" minOccurs="0" />
+              <xs:element name="CAN_PESO" msprop:Generator_ColumnVarNameInTable="columnCAN_PESO" msprop:Generator_ColumnPropNameInRow="CAN_PESO" msprop:Generator_ColumnPropNameInTable="CAN_PESOColumn" msprop:Generator_UserColumnName="CAN_PESO" type="xs:string" minOccurs="0" />
+              <xs:element name="OR_COLOR" msprop:Generator_ColumnVarNameInTable="columnOR_COLOR" msprop:Generator_ColumnPropNameInRow="OR_COLOR" msprop:Generator_ColumnPropNameInTable="OR_COLORColumn" msprop:Generator_UserColumnName="OR_COLOR" type="xs:string" minOccurs="0" />
+              <xs:element name="OR_SABOR" msprop:Generator_ColumnVarNameInTable="columnOR_SABOR" msprop:Generator_ColumnPropNameInRow="OR_SABOR" msprop:Generator_ColumnPropNameInTable="OR_SABORColumn" msprop:Generator_UserColumnName="OR_SABOR" type="xs:string" minOccurs="0" />
+              <xs:element name="OR_TEXTURA" msprop:Generator_ColumnVarNameInTable="columnOR_TEXTURA" msprop:Generator_ColumnPropNameInRow="OR_TEXTURA" msprop:Generator_ColumnPropNameInTable="OR_TEXTURAColumn" msprop:Generator_UserColumnName="OR_TEXTURA" type="xs:string" minOccurs="0" />
+              <xs:element name="COM_GRASA" msprop:Generator_ColumnVarNameInTable="columnCOM_GRASA" msprop:Generator_ColumnPropNameInRow="COM_GRASA" msprop:Generator_ColumnPropNameInTable="COM_GRASAColumn" msprop:Generator_UserColumnName="COM_GRASA" type="xs:string" minOccurs="0" />
+              <xs:element name="COM_VITAMINAS" msprop:Generator_ColumnVarNameInTable="columnCOM_VITAMINAS" msprop:Generator_ColumnPropNameInRow="COM_VITAMINAS" msprop:Generator_ColumnPropNameInTable="COM_VITAMINASColumn" msprop:Generator_UserColumnName="COM_VITAMINAS" type="xs:string" minOccurs="0" />
+              <xs:element name="COM_MINERALES" msprop:Generator_ColumnVarNameInTable="columnCOM_MINERALES" msprop:Generator_ColumnPropNameInRow="COM_MINERALES" msprop:Generator_ColumnPropNameInTable="COM_MINERALESColumn" msprop:Generator_UserColumnName="COM_MINERALES" type="xs:string" minOccurs="0" />
+              <xs:element name="FQ_HP" msprop:Generator_ColumnVarNameInTable="columnFQ_HP" msprop:Generator_ColumnPropNameInRow="FQ_HP" msprop:Generator_ColumnPropNameInTable="FQ_HPColumn" msprop:Generator_UserColumnName="FQ_HP" type="xs:string" minOccurs="0" />
+              <xs:element name="FQ_ACIDO_LACTIO" msprop:Generator_ColumnVarNameInTable="columnFQ_ACIDO_LACTIO" msprop:Generator_ColumnPropNameInRow="FQ_ACIDO_LACTIO" msprop:Generator_ColumnPropNameInTable="FQ_ACIDO_LACTIOColumn" msprop:Generator_UserColumnName="FQ_ACIDO_LACTIO" type="xs:string" minOccurs="0" />
+              <xs:element name="RES_ANTIBIOTICOS" msprop:Generator_ColumnVarNameInTable="columnRES_ANTIBIOTICOS" msprop:Generator_ColumnPropNameInRow="RES_ANTIBIOTICOS" msprop:Generator_ColumnPropNameInTable="RES_ANTIBIOTICOSColumn" msprop:Generator_UserColumnName="RES_ANTIBIOTICOS" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

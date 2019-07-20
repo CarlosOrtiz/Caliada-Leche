@@ -1,0 +1,55 @@
+﻿.item-peticion:hover{
+padding-left:10px;
+}
+
+.height-title{
+    height:40px;
+}
+
+.margin-top-5{
+    margin-top:5px;
+}
+
+ .no-resize{
+     resize:vertical;
+     max-height:200px;
+     min-height:60px;
+ }
+ .btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#div-img{
+    margin-top:5px;
+    border: double 3px #3c8dbc;
+    border-radius:5px;
+    min-height:60px;
+}
+
+.enlace:link, .enlace:visited{
+    color:black;
+}
+.enlace:hover{
+    text-decoration-line:underline;
+}
+
+.remove-style-form{
+    border: none;
+    background-color:white;
+}

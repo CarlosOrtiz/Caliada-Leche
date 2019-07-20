@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Calidad_leche" targetNamespace="http://tempuri.org/Calidad_leche.xsd" xmlns:mstns="http://tempuri.org/Calidad_leche.xsd" xmlns="http://tempuri.org/Calidad_leche.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Calidad_leche" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Calidad_leche" msprop:Generator_UserDSName="Calidad_leche">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DATOS_LECHE" msprop:Generator_TableClassName="DATOS_LECHEDataTable" msprop:Generator_TableVarName="tableDATOS_LECHE" msprop:Generator_TablePropName="DATOS_LECHE" msprop:Generator_RowDeletingName="DATOS_LECHERowDeleting" msprop:Generator_RowChangingName="DATOS_LECHERowChanging" msprop:Generator_RowEvHandlerName="DATOS_LECHERowChangeEventHandler" msprop:Generator_RowDeletedName="DATOS_LECHERowDeleted" msprop:Generator_UserTableName="DATOS_LECHE" msprop:Generator_RowChangedName="DATOS_LECHERowChanged" msprop:Generator_RowEvArgName="DATOS_LECHERowChangeEvent" msprop:Generator_RowClassName="DATOS_LECHERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOMBRE_PRUEBA" msprop:Generator_ColumnVarNameInTable="columnNOMBRE_PRUEBA" msprop:Generator_ColumnPropNameInRow="NOMBRE_PRUEBA" msprop:Generator_ColumnPropNameInTable="NOMBRE_PRUEBAColumn" msprop:Generator_UserColumnName="NOMBRE_PRUEBA" type="xs:string" minOccurs="0" />
+              <xs:element name="DAT_NOMBRE" msprop:Generator_ColumnVarNameInTable="columnDAT_NOMBRE" msprop:Generator_ColumnPropNameInRow="DAT_NOMBRE" msprop:Generator_ColumnPropNameInTable="DAT_NOMBREColumn" msprop:Generator_UserColumnName="DAT_NOMBRE" type="xs:string" minOccurs="0" />
+              <xs:element name="RES_TOTAL_PRUEBAS" msprop:Generator_ColumnVarNameInTable="columnRES_TOTAL_PRUEBAS" msprop:Generator_ColumnPropNameInRow="RES_TOTAL_PRUEBAS" msprop:Generator_ColumnPropNameInTable="RES_TOTAL_PRUEBASColumn" msprop:Generator_UserColumnName="RES_TOTAL_PRUEBAS" type="xs:string" minOccurs="0" />
+              <xs:element name="CANTIDAD_PRUEBAS" msprop:Generator_ColumnVarNameInTable="columnCANTIDAD_PRUEBAS" msprop:Generator_ColumnPropNameInRow="CANTIDAD_PRUEBAS" msprop:Generator_ColumnPropNameInTable="CANTIDAD_PRUEBASColumn" msprop:Generator_UserColumnName="CANTIDAD_PRUEBAS" type="xs:string" minOccurs="0" />
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" type="xs:string" minOccurs="0" />
+              <xs:element name="ROL_NOMBRE" msprop:Generator_ColumnVarNameInTable="columnROL_NOMBRE" msprop:Generator_ColumnPropNameInRow="ROL_NOMBRE" msprop:Generator_ColumnPropNameInTable="ROL_NOMBREColumn" msprop:Generator_UserColumnName="ROL_NOMBRE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

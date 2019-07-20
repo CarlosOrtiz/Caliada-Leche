@@ -1,0 +1,222 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Proyecto_Web.Vistas.Private.Admin" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title>Morelac Admin</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link href="../../../Plantilla/Privado/Img/icon/vaca.png" rel="icon" />
+    <link href="../../../Plantilla/Privado/Img/icon/vaca.png" rel="apple-touch-icon" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="../../../Plantilla/Privado/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../../Plantilla/Privado/bower_components/font-awesome/css/font-awesome.min.css" />
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../../Plantilla/Privado/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" />
+    <!-- Select2 -->
+
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../../../Plantilla/Privado/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../../Plantilla/Privado/dist/css/AdminLTE.min.css" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../../../Plantilla/Privado/dist/css/skins/skin-yellow-light.min.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <!-- iCheck for checkboxes and radio inputs -->
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+
+    <link rel="stylesheet" href="../../../Plantilla/Privado/dist/css/OwnCss.css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script type="text/javascript">
+        function soloNumeros(e) {
+            var key = window.Event ? e.which : e.keyCode
+            return (key >= 48 && key <= 57)
+        }
+
+        function sololetras(e) {
+            key = e.keyCode || e.which;
+            teclado = String.fromCharCode(key).toLocaleLowerCase();
+            letras = " abcdefghijfklmnñopqrstuvwxyz"
+            especiales = "8-37-38-46-164"
+            teclado_especial = false;
+            for (var i in especiales) {
+                if (key == especiales[i]) {
+                    teclado_especial = true;
+                    break;
+                }
+            }
+            if (letras.indexOf(teclado) == -1 && !teclado_especial) {
+                return false;
+            }
+        }
+
+        //Validacion MaxLength TextBox Multiline
+        function checkTextAreaMaxLength(textBox, e, length) {
+            var mLen = textBox["MaxLength"];
+            if (null == mLen)
+                mLen = length;
+
+            var maxLength = parseInt(mLen);
+            if (!checkSpecialKeys(e)) {
+                if (textBox.value.length > maxLength - 1) {
+                    if (window.event)//IE
+                        e.returnValue = false;
+                    else//Firefox
+                        e.preventDefault();
+                }
+            }
+        }
+        function checkSpecialKeys(e) {
+            if (e.keyCode != 8 && e.keyCode != 46 && e.keyCode != 37 && e.keyCode != 38 && e.keyCode != 39 && e.keyCode != 40)
+                return false;
+            else
+                return true;
+        }
+    </script>
+</head>
+<body class="fixed sidebar-mini sidebar-mini-expand-feature skin-yellow-light">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="wrapper">
+
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="/Vistas/Private/Home/index_admin.aspx" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini">
+                        <img src="../../../Multimedia/Imagenes/Logo sin fondo.png" width="50" /></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg">
+                        <img src="../../../Multimedia/Imagenes/Logo sin fondo.png" width="85" /></span>
+                </a>
+
+                <!-- Header Navbar: style can be found in header.less -->
+
+                <nav class="navbar navbar-static-top">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- User Account: style can be found in dropdown.less -->
+                            <li class="dropdown user user-menu">
+                                <asp:LinkButton ID="Btn_Cerrar_Sesion" runat="server" CssClass="hidden-xs" OnClick="Btn_cerrar_Click"><i class="fa fa-sign-out"></i>Cerrar sesión</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+         
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 896px;">
+                      <section class="sidebar" style="overflow: hidden; width: auto; height: 896px;">
+                        <!-- Sidebar user panel -->
+                        <div class="user-panel" style="white-space: normal; padding-bottom:10%;">
+                            <div class="pull-left image">
+                                <asp:Image runat="server" ID="IMG" CssClass="img-circle" />
+                            </div>
+
+                            <div class="pull-left info">
+                                <p>
+                                    <asp:Label runat="server" ID="NombreUser" Text="UserName"></asp:Label><br />
+                                    <a href="#" style="font-size: 10px;"><i class="fa fa-circle text-success"></i>
+                                        <asp:Label Style="color: black;" runat="server" ID="RolUser"></asp:Label>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- sidebar menu: : style can be found in sidebar.less -->
+                       <ul class="sidebar-menu tree" data-widget="tree">
+                            <li style="text-align:left;">
+                                <a href="/Vistas/Private/Home/index_admin.aspx">
+                                    <i class="fa fa-home"></i>
+                                    <span>Inicio</span>
+                                </a>
+                            </li>
+                            <li class="header">CONTENIDO</li>
+                            <asp:Repeater ID="Rep_Menu_Dim" runat="server">
+                                <ItemTemplate>
+                                    <li>
+                                        <a href="<%#Eval("MENU_URL") %>">
+                                            <i class="fa <%#Eval("MENU_ICON") %>"></i>
+                                            <span><%#Eval("MENU_NOMBRE") %></span>
+                                        </a>
+                                    </li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </section>
+                </div>
+                <div class="slimScrollBar" style="background: rgba(0, 0, 0, 0.2); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 814.215px;"></div>
+                    <div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+            </aside>
+            <div class="content-wrapper">
+                <section class="content container-fluid">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </section>
+            </div>
+            <div class="clearfix"></div>
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 1.0
+                </div>
+                2019 | <strong>Morelac</strong> Morelia - Caquetá. Todos los derechos reservados CARLOS ORTIZ & JOHANT VARGAS &copy; 
+            </footer>
+
+            <!-- /.control-sidebar -->
+            <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+            <div class="control-sidebar-bg"></div>
+        </div>
+
+        <!-- jQuery 3 -->
+        <script src="../../../Plantilla/Privado/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="../../../Plantilla/Privado/bower_components/jquery-ui/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.7 -->
+        <script src="../../../Plantilla/Privado/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../../../Plantilla/Privado/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="../../../Plantilla/Privado/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <!-- Bootstrap WYSIHTML5 -->
+        <script src="../../../Plantilla/Privado/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+        <!-- Slimscroll -->
+        <script src="../../../Plantilla/Privado/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../../../Plantilla/Privado/bower_components/fastclick/lib/fastclick.js"></script>
+        <!-- SlimScroll -->
+        <script src="../../../Plantilla/Privado/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+        <!-- AdminLTE App -->
+        <script src="../../../Plantilla/Privado/dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="../../../Plantilla/Privado/dist/js/pages/dashboard.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="../../../Plantilla/Privado/dist/js/demo.js"></script>
+        <!-- page script -->
+        <script src="../../../Plantilla/Privado/dist/js/OwnScript.js"></script>
+        <!-- iCheck 1.0.1 -->
+        <asp:ContentPlaceHolder ID="ScriptsEndPage" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </form>
+
+</body>
+</html>
